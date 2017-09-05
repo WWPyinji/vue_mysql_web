@@ -8,34 +8,28 @@
 
 import config from './base'
 import axios from 'axios'
-import {alert,showLoading} from '../utils/tools'
+import qs from 'qs'
 
 export default {
   post: function (url, params, successCallBack, errorCallBack) {
-    //调用网络请求前显示loading框
-   showLoading(true);
 
     //配置请求参数
     config.serviceConfig.data = params;
-
+    url = config.serviceConfig.baseURL + url;
     //返回请求参数
-    axios.post(url, {}, config.serviceConfig)
+    axios.post(url, qs.stringify(params))
       .then(function (response) {
         if (response && response.data) {
           successCallBack(response);
         } else {
-          //alert('系统异常');
+          console.log('系统异常');
           errorCallBack(response);
         }
-        showLoading(false)//关闭loading框
       })
       .catch(function (error) {
-        ////关闭loading框
-       showLoading(false)
-        // alert('系统异常');
+        console.log('系统异常');
       })
   }
 }
-
 
 

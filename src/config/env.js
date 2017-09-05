@@ -22,7 +22,7 @@ if (process.env.NODE_ENV == 'development') {//开发环境
 
   iconBaseUrl = 'http://localhost:8080';
 
-  baseUrl = 'http://192.168.1.50:8080/lottery-controller';
+  baseUrl = 'http://192.168.1.105:3000';
 
 } else {//生产环境
 

@@ -6,7 +6,6 @@
  Time: 上午9:13
  To change this template use File | Settings | File Templates. */
 
-import {getAppVersion,getAppClientId} from '../utils/tools'
 import env from './env'
 import https from 'https'
 import pako from 'pako'
@@ -51,9 +50,6 @@ export default {
     headers: {
       'X-Requested-With': 'XMLHttpRequest',
       'Content-Type': 'application/json;charset=utf-8',
-      // 'Content-Encoding':'gzip',
-      'version': getAppVersion(),
-      'clientId':getAppClientId()
     },
 
 

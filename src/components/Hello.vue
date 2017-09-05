@@ -27,6 +27,24 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted() {
+//    var that =this;
+//    this.$ajax.post('/get_msg', this.$qs.stringify({
+//      id: 15201082757,
+//    })).then(res => {
+//      that.data = res.data;
+//      console.log(that.data);
+//    })
+    const params = {
+        id : 15201082757,
+    };
+    this.httpService.get_msg(params, (response) => {
+        console.log(response)
+      },
+    (error) => {
+
+    })
   }
 }
 </script>
